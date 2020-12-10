@@ -1,0 +1,11 @@
+
+
+ // PSEUDOCODE:
+                // Alarmed person encounters zombie
+                // Either they become a zombie or they dont
+                // Roll the die:
+                // if(x <= 3){ //person becomes infected
+                //      //access a single element of the alarmed map and change id to 3 for zombie
+                //      alarmed_map[alarmed variable]--;
+                //      zombie_map[zombie variable]++;  
+                // }
