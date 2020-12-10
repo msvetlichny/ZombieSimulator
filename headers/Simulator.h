@@ -22,21 +22,35 @@
 class Simulator{
 
     private:
+
         int zombie_movingdata, ignorant_movingdata, alarmed_movingdata;
-
+        //variables to be modified by location_move method
+        int medical_zombies, medical_alarmed, medical_ignorant = 0;
+        int docks_zombies, docks_alarmed, docks_ignorant = 0;
+        int downtown_zombies, downtown_alarmed, downtown_ignorant = 0;
+        int university_zombies, university_alarmed, university_ignorant = 0;
+        int soho_zombies, soho_alarmed, soho_ignorant = 0;
+        
     public:
+        //set to zero for portion of simulation. We can determine what each value of time means.
+        //to be used by report header
+        int time_click = 0; 
 
-    Simulator(int population, int X, int Y, int Z,int Q, int P, int R);
+        Simulator(int population, int X, int Y, int Z,int Q, int P, int R);
 
-    // This is going to be the core cog in the entirety of this programs operation. 
-    // Update will be iterated to keep "updating" each location, it's population and inhabitants
-    void update(Downtown downtown, Soho soho, Docks docks, University university, Medical medical);
+        // This is going to be the core cog in the entirety of this programs operation. 
+        // Update will be iterated to keep "updating" each location, it's population and inhabitants
+        void update(Medical medical, Docks docks, Downtown downtown, University university, Soho soho);
 
-    //need method for determining where person objects in a queue go
-    void location_move(int k, int person_id, int loc_id, Downtown downtown, Soho soho, Docks docks, University university, Medical medical);
-    int zombie_move_parse(std::string str);
-    int alarmed_move_parse(std::string str);
-    int ignorant_move_parse(std::string str);
+        //need method for determining where person objects in a queue go
+        void location_move(int k, int person_id, int loc_id, Medical medical, Docks docks, Downtown downtown, University university, Soho soho);
+
+        //method that takes the three move parsers and updates all variables
+        void move_update(Medical medical, Docks docks, Downtown downtown, University university, Soho soho);
+
+        int zombie_move_parse(std::string str);
+        int alarmed_move_parse(std::string str);
+        int ignorant_move_parse(std::string str);
 
 };
 

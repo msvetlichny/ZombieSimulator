@@ -79,7 +79,7 @@
         }
     }
 
-    bool Downtown::location_change(Person P){
+    void Downtown::location_change(Person P){
         int x = rand() % 10 + 1;
         if(P.get_id() == 1){
             //calculate probability of person moving from one location to the next if they are alarmed, and where they go:
@@ -89,7 +89,7 @@
                 ignorant_queue.push(P);
             }
         }
-        else if (P.get_id()== 2){
+        else if (P.get_id() == 2){
             //if person is a alarmed person
             if(x <= alarmed_move){
                 alarmed_map[P]--;
@@ -120,30 +120,32 @@
         //////////////////////////////////////////////////////////////
         // THE ORDER IN WHICH THESE LOOPS OCCUR IS IMPORANT 
         // AND CAN SIGNIFICANTLY CHANGE THE OUTCOME OF THE SIMULATION
+        // - we're going to test alarmed denizens first followed by ignorant
         // need to split amount of tests in the next two for loops.
-        if(ignorant_map.size() > 0){
+        if(alarmed_map.size() > 0){ // we have this conditional so that we can potentially skip the for-loop
             for(int i = 0; i < zombie_count; i++){
-                if(ignorant_map.size() > 0){
+                if(alarmed_map.size() > 0){
                     // reassign iterator to be looking at the first element of the map every time, until that person
                     // eventually becomes a zombie and is removed from the alarmed map.
-                    it = ignorant_map.begin(); 
+                    it = alarmed_map.begin(); 
                     infection_test(it->first); //it->first is = Person P
                     tests++;
                 }
             }
         }
-        if(alarmed_map.size() > 0){
+        //testing ignorant after alarmed. Need to make sure we aren't doubling up on interactions/tests, hence "zombie_count - tests".
+        if(ignorant_map.size() > 0){  
             for(int i = 0; i < zombie_count - tests; i++){
-                if(alarmed_map.size() > 0){
+                if(ignorant_map.size() > 0){
                     // see comment in loop above
-                    it = alarmed_map.begin(); 
+                    it = ignorant_map.begin(); 
                     infection_test(it->first);
                     tests++;
                 }
             }
             //potential code for testing for bugs:
             // if(tests != zombie_count){
-            //      std::cout << "UH OH, ZOMBIE TESTS ARE OFF" << std::endl;   
+            //      std::cout << "ZOMBIE TESTS DONT ALIGN" << std::endl;   
             // }
         }
         //we want to use a "constant" value "alarmed_count" otherwise this loop could grow in size while it's performing  
@@ -180,16 +182,8 @@
         zombie_count = zombie_map.size();
         alarmed_count = alarmed_map.size();
         ignorant_count = ignorant_map.size();
-
-        //this will be returned to the simulator header where this info will be parsed and new objects in other locations will be created
-        moving_data = std::to_string(ignorant_queue.size()) + "p" + std::to_string(alarmed_queue.size()) + "q"+
-                        std::to_string(zombie_queue.size()); 
+        
     }
 
-    //method that sends data to simulator in form of a string
-    std::string Downtown::get_movedata(){
-        std::string temp = moving_data;
-        moving_data.clear();
-        return temp;
-    }
+
 

@@ -9,3 +9,9 @@
                 //      alarmed_map[alarmed variable]--;
                 //      zombie_map[zombie variable]++;  
                 // }
+
+
+
+            // while (people aren't zomebies){
+            //      update();    
+            // }

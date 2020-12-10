@@ -18,9 +18,6 @@ class Downtown : public Simville{
 
     public:
 
-        //these are public so that the simulator header can modify and manage these easily
-        
-
         //Downtown constructor 
         // X = chance of ignorant person becoming a zombie
         // Y = chance of ignorant person becoming alarmed from another alarmed person
@@ -36,14 +33,13 @@ class Downtown : public Simville{
         // test to see if alarmed or ignorant becomes a zombie
         void infection_test(Person P);
         // perform test and determine where a person object moves to
-        bool location_change(Person P);
-        // main driving method for each location object. Performs all methods defined in class and creates a string called 
-        // moving_data for simulator.h to make use of.
+        void location_change(Person P);
+        // main driving method for each location object. Performs all methods defined in class
         void update();
 
-        //method that sends data to simulator in form of a string
+        // method that sends data to simulator in form of a string
+        // creates a string called moving_data for simulator.h to make use of
         std::string get_movedata();
-
 };
 
 #endif

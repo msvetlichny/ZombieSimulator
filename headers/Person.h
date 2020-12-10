@@ -12,9 +12,12 @@
 #ifndef PERSON_H
 #define PERSON_H
 
+// There isn't a whole lot to this class. By the specifications 
+// it doesn't appear there is a good reason to have a polymorphic person class.
 class Person{
 
     private:
+    
         //class that assigns 0 for "Person", 1 for "Ignorant", 2 for "Alarmed", and 3 for "Zombie"
         int idNum; 
 
@@ -32,9 +35,6 @@ class Person{
         void set_id(int n){
             idNum = n;
         }
-
-
-
 };
 
 
