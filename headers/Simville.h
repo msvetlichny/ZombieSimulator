@@ -13,6 +13,7 @@
 #define SIMVILLE_H
 
 #include "../headers/Person.h"
+#include <iostream>
 #include <vector>
 #include <map>
 #include <queue>
@@ -33,16 +34,16 @@ class Simville{
         // ignorant_to_zombie = X, ignorant_to_alarmed = Y, alarmed_to_zombie = Z, ignorant_move = Q, 
         // alarmed_move = P: BONUS, not included in specs, zombie_move = R: BONUS, not included in specs
         int current_population, total_population, location_id, ignorant_to_zombie, ignorant_to_alarmed, alarmed_to_zombie, 
-        ignorant_move, alarmed_move, zombie_move; 
+        ignorant_move, alarmed_move, zombie_move = 0; 
 
         // Used for communicating information to the Simulator class.
         std::string moving_data;
 
         // To be used for reporting information
-        int ignorant_count;
-        int alarmed_count;
-        int zombie_count;
-        int total_count; // Total number of persons in a city
+        int ignorant_count = 0;
+        int alarmed_count = 0;
+        int zombie_count= 0;
+        int total_count = 0; // Total number of persons in a city
 
     public:
 
@@ -51,7 +52,7 @@ class Simville{
         std::queue<Person> zombie_queue;
         std::queue<Person> ignorant_queue;
         std::queue<Person> alarmed_queue;
-        std::map<Person, int> alarmed_map;
+        std::map<Person, int> alarmed_map; //
         std::map<Person, int> ignorant_map;
         std::map<Person, int> zombie_map;
         std::map<Person , int>::iterator it; //iterator used to point to objects in a map
@@ -60,6 +61,13 @@ class Simville{
     Simville();
     //main constructor accepting all required arguments
     Simville(int total_population, int X, int Y, int Z, int Q, int P, int R);
+
+    //test to see if ignorant becomes an alarmed person
+    void alert_test(Person P);
+    // test to see if alarmed or ignorant becomes a zombie
+    void infection_test(Person P);
+    // perform test and determine where a person object moves to
+    void location_change(Person P);
 
     //getters for counts - used for reporting
     int get_ignorant_count();

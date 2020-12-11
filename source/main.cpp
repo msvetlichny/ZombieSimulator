@@ -20,4 +20,5 @@
 int main(){
     srand(time(NULL));
     
+    Simulator sim(2000, 50, 50, 50, 50, 50, 50);
 }

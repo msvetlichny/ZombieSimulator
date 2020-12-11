@@ -9,9 +9,10 @@
 //		   http://www.cplusplus.com/reference/string/string/
 //         Module 5 assignment
 //////////////////////////////////////////////////
-#include "../headers/Downtown.h"
+#include "../headers/University.h"
 #include <iostream>
-    //Downtown constructor
+ 
+    //University constructor
     ////////// BELOW ARE INTIALIZED IN BASE CLASS
     // X = chance of ignorant person becoming a zombie
     // Y = chance of ignorant person becoming alarmed from another alarmed person
@@ -20,8 +21,8 @@
     ////////// ADDITIONAL SPECS //////////
     // P = chance of alarmed person moving to new district
     // R = chance of zombie moving to new district
-    Downtown::Downtown(int total_population, int X, int Y, int Z, int Q, int P, int R){
-        location_id = 3;
+    University::University(int total_population, int X, int Y, int Z, int Q, int P, int R){
+        location_id = 2;
         this->total_population = total_population;
         ignorant_to_zombie = X;
         ignorant_to_alarmed = Y;
@@ -35,13 +36,11 @@
         for(int i = 0; i < current_population; i++){
             Person P(1); 
             ignorant_map[P]++; //increase amount of ignorant people - dereference the person objects
-            std::cout << "loaded ignorant person into downtown" << std::endl;
         }
     }
 
-   
     //Biggest location method - everything happens here
-    void Downtown::update(){
+    void University::update(){
         //establish variables to be used in loops
         zombie_count = zombie_map.size();
         alarmed_count = alarmed_map.size();
@@ -114,10 +113,8 @@
         zombie_count = zombie_map.size();
         alarmed_count = alarmed_map.size();
         ignorant_count = ignorant_map.size();
+        
     }
-
-    
-
 
 
 

@@ -21,9 +21,10 @@
             University university(population, X, Y, Z, Q, P, R);
             Medical medical(population, X, Y, Z, Q, P, R);
 
-            //while(zombies != population){
-            //    update
-            //}
+            while(downtown.get_zombie_count() + soho.get_zombie_count() + docks.get_zombie_count() +
+                 university.get_zombie_count() + medical.get_zombie_count() != population){
+                update(medical, docks, downtown, university, soho);
+            }
     }
 
     // This is going to be the core cog in the entirety of this programs operation. 
@@ -60,7 +61,8 @@
         location_move(soho_ignorant, 1, 5, medical, docks, downtown, university, soho);
         // need to have a report feature either here or somewhere within simville
         // probably here though.
-        time_click++; //iterator time by 1 each update
+        time_click++; //iterate time by 1 each update
+        std::cout << "THIS IS WORKING" << std::endl;
     }
 
     // person_type = one of the three denizens, loc_id = id of the district the person is currently in, 

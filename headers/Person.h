@@ -35,6 +35,11 @@ class Person{
         void set_id(int n){
             idNum = n;
         }
+
+        //Prof. Matt assisted in this:
+        bool operator<(const Person p) const {
+            return this->idNum < p.idNum;
+        }
 };
 
 

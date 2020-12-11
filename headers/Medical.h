@@ -29,18 +29,11 @@ class Medical : public Simville{
         // R = chance of zombie moving to new district
         Medical(int total_population, int X, int Y, int Z,int Q, int P, int R);
 
-        //test to see if ignorant becomes an alarmed person
-        void alert_test(Person P);
-        // test to see if alarmed or ignorant becomes a zombie
-        void infection_test(Person P);
-        // perform test and determine where a person object moves to
-        void location_change(Person P);
         // main driving method for each location object. Performs all methods defined in class and creates a string called 
         // moving_data for simulator.h to make use of.
         void update();
 
-        //method that sends data to simulator in form of a string
-        std::string get_movedata();
+       
 };
 
 #endif
