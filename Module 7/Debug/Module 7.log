@@ -1,0 +1,34 @@
+﻿  Docks.cpp
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Docks.cpp(33,41): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Docks.cpp(92,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Docks.cpp(99,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Docks.cpp(104,21): warning C4018: '<': signed/unsigned mismatch
+  Downtown.cpp
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Downtown.cpp(32,41): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Downtown.cpp(94,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Downtown.cpp(101,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Downtown.cpp(106,21): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
+C:\Users\mishm\source\repos\Module 7.1\Module 7\main.cpp(21,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Medical.cpp
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Medical.cpp(32,41): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Medical.cpp(99,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Medical.cpp(106,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Medical.cpp(111,21): warning C4018: '<': signed/unsigned mismatch
+  Simulator.cpp
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Simulator.cpp(381,36): warning C4018: '<': signed/unsigned mismatch
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Simulator.cpp(390,36): warning C4018: '<': signed/unsigned mismatch
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Simulator.cpp(399,20): warning C4018: '<': signed/unsigned mismatch
+  Simville.cpp
+  Soho.cpp
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Soho.cpp(32,41): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Soho.cpp(92,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Soho.cpp(99,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\mishm\source\repos\Module 7.1\Module 7\Soho.cpp(104,21): warning C4018: '<': signed/unsigned mismatch
+  University.cpp
+C:\Users\mishm\source\repos\Module 7.1\Module 7\University.cpp(33,41): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\mishm\source\repos\Module 7.1\Module 7\University.cpp(93,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\mishm\source\repos\Module 7.1\Module 7\University.cpp(100,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\mishm\source\repos\Module 7.1\Module 7\University.cpp(105,21): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Module 7.vcxproj -> C:\Users\mishm\source\repos\Module 7.1\Debug\Module 7.exe
