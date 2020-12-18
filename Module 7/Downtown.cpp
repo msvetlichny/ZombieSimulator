@@ -60,7 +60,7 @@ void Downtown::update() {
 				// reassign iterator to be looking at the first element of the map every time, until that person
 				// eventually becomes a zombie and is removed from the alarmed map.
 				it = alarmed_map.begin();
-				infection_test(it); //it->first is = Person P //POTENTIAL ERROR FLAG HERE
+				infection_test(it); 
 				tests++;
 			}
 		}
@@ -71,14 +71,10 @@ void Downtown::update() {
 			if (ignorant_map.size() > 0) {
 				// see comment in loop above
 				it = ignorant_map.begin();
-				infection_test(it); //POTENTIAL ERROR FLAG HERE
+				infection_test(it);
 				tests++;
 			}
 		}
-		//potential code for testing for bugs:
-		// if(tests != zombie_count){
-		//      std::cout << "ZOMBIE TESTS DONT ALIGN" << std::endl;   
-		// }
 	}
 	//we want to use a "constant" value "alarmed_count" otherwise this loop could grow in size while it's performing  
 	//the set number of tests
